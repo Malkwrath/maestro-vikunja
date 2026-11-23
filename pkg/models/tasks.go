@@ -1240,6 +1240,11 @@ func createTasksInViews(s *xorm.Session, projectID int64, tasks []*Task, a web.A
 		t.setIdentifier(p)
 
 		if t.IsFavorite {
+			if !t.Done {
+				if err := validatePedestalWIPLimit(s, createdBy, t.ID); err != nil {
+					return err
+				}
+			}
 			if err := addToFavorites(s, t.ID, createdBy, FavoriteKindTask); err != nil {
 				return err
 			}
@@ -1693,7 +1698,16 @@ func (t *Task) updateSingleTaskInViews(s *xorm.Session, a web.Auth, fields []str
 		t.IsFavorite = wasFavorite
 	}
 	if t.IsFavorite && !wasFavorite {
+		if !t.Done {
+			if err := validatePedestalWIPLimit(s, a, t.ID); err != nil {
+				return err
+			}
+		}
 		if err := addToFavorites(s, t.ID, a, FavoriteKindTask); err != nil {
+			return err
+		}
+	} else if t.IsFavorite && wasFavorite && !t.Done && ot.Done {
+		if err := validatePedestalWIPLimit(s, a, t.ID); err != nil {
 			return err
 		}
 	}

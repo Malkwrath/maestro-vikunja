@@ -106,4 +106,28 @@ func getFavorites(s *xorm.Session, entityIDs []int64, a web.Auth, kind FavoriteK
 		favorites[fav.EntityID] = true
 	}
 	return
+	
+func validatePedestalWIPLimit(s *xorm.Session, a web.Auth, excludeTaskID int64) error {
+	u, err := user.GetFromAuth(a)
+	if err != nil {
+		return nil
+	}
+
+	count, err := s.Table("favorites").
+		Join("INNER", "tasks", "tasks.id = favorites.entity_id").
+		Where("favorites.user_id = ? AND favorites.kind = ? AND favorites.entity_id != ? AND tasks.done = ?",
+			u.ID, FavoriteKindTask, excludeTaskID, false).
+		Count()
+	if err != nil {
+		return err
+	}
+
+	if count >= 2 {
+		return InvalidFieldErrorWithMessage(
+			[]string{"is_favorite"},
+			"Piedestał jest pełny (twardy limit WIP = 2). Ukończ lub cofnij jedno z aktywnych zadań.",
+		)
+	}
+
+	return nil
 }

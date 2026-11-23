@@ -1,134 +1,72 @@
 <template>
 	<aside
-		:class="{'is-active': baseStore.menuActive, 'is-resizing': isResizing}"
+		:class="{ 'is-active': baseStore.menuActive, 'is-resizing': isResizing }"
 		class="menu-container"
-		:style="{'--sidebar-width': sidebarWidthStyle}"
+		:style="{ '--sidebar-width': sidebarWidthStyle }"
 	>
-		<nav
-			class="menu top-menu"
-			:aria-label="$t('navigation.main')"
-		>
+		<nav class="menu top-menu" :aria-label="$t('navigation.main')">
 			<RouterLink
-				:to="{name: 'home'}"
+				:to="{ name: 'home' }"
 				class="logo"
 				:aria-label="$t('navigation.home')"
 			>
-				<Logo
-					width="164"
-					height="48"
-				/>
+				<Logo width="164" height="48" />
 			</RouterLink>
 			<menu class="menu-list other-menu-items">
 				<li>
 					<RouterLink
 						v-shortcut="SHORTCUTS.navigation.overview"
-						:to="{ name: 'home'}"
+						:to="{ name: 'home' }"
 					>
 						<span class="menu-item-icon icon">
 							<Icon icon="calendar" />
 						</span>
-						{{ $t('navigation.overview') }}
-					</RouterLink>
-				</li>
-				<li>
-					<RouterLink
-						v-shortcut="SHORTCUTS.navigation.upcoming"
-						:to="{ name: 'tasks.range'}"
-					>
-						<span class="menu-item-icon icon">
-							<Icon :icon="['far', 'calendar-alt']" />
-						</span>
-						{{ $t('navigation.upcoming') }}
+						Kokpit Maestro
 					</RouterLink>
 				</li>
 				<li>
 					<RouterLink
 						v-shortcut="SHORTCUTS.navigation.projects"
-						:to="{ name: 'projects.index'}"
+						:to="{ name: 'projects.index' }"
 					>
 						<span class="menu-item-icon icon">
 							<Icon icon="layer-group" />
 						</span>
-						{{ $t('project.projects') }}
+						{{ $t("project.projects") }}
 					</RouterLink>
 				</li>
 				<li>
 					<RouterLink
 						v-shortcut="SHORTCUTS.navigation.labels"
-						:to="{ name: 'labels.index'}"
+						:to="{ name: 'labels.index' }"
 					>
 						<span class="menu-item-icon icon">
 							<Icon icon="tags" />
 						</span>
-						{{ $t('label.title') }}
+						{{ $t("label.title") }}
 					</RouterLink>
 				</li>
 				<li>
 					<RouterLink
-						v-shortcut="SHORTCUTS.navigation.teams"
-						:to="{ name: 'teams.index'}"
-					>
-						<span class="menu-item-icon icon">
-							<Icon icon="users" />
-						</span>
-						{{ $t('team.title') }}
-					</RouterLink>
-				</li>
-				<li v-if="timeTrackingEnabled">
-					<RouterLink :to="{ name: 'time-tracking'}">
-						<span class="menu-item-icon icon">
-							<Icon :icon="['far', 'clock']" />
-						</span>
-						{{ $t('timeTracking.title') }}
-					</RouterLink>
-				</li>
-				<li>
-					<RouterLink
-						:to="{ name: 'trash'}"
-						:class="{'router-link-exact-active': $route.name === 'trash.tasks' || $route.name === 'trash.projects'}"
+						:to="{ name: 'trash' }"
+						:class="{
+							'router-link-exact-active':
+								$route.name === 'trash.tasks' ||
+								$route.name === 'trash.projects',
+						}"
 					>
 						<span class="menu-item-icon icon">
 							<Icon icon="trash-alt" />
 						</span>
-						{{ $t('trash.title') }}
+						{{ $t("trash.title") }}
 					</RouterLink>
 				</li>
 			</menu>
 		</nav>
 
-		<Loading
-			v-if="projectList.isLoading"
-			variant="small"
-		/>
+		<Loading v-if="projectList.isLoading" variant="small" />
 		<template v-else>
-			<nav
-				v-if="favoriteProjects.length"
-				class="menu"
-				:aria-label="$t('project.pseudo.favorites.title')"
-			>
-				<ProjectsNavigation
-					:model-value="favoriteProjects"
-					:can-edit-order="false"
-					:can-collapse="false"
-				/>
-			</nav>
-			
-			<nav
-				v-if="savedFilterProjects.length"
-				class="menu"
-				:aria-label="$t('navigation.savedFilters')"
-			>
-				<ProjectsNavigation
-					:model-value="savedFilterProjects"
-					:can-edit-order="false"
-					:can-collapse="false"
-				/>
-			</nav>
-
-			<nav
-				class="menu"
-				:aria-label="$t('project.projects')"
-			>
+			<nav class="menu" :aria-label="$t('project.projects')">
 				<ProjectsNavigation
 					:model-value="projects"
 					:can-edit-order="true"
@@ -136,11 +74,6 @@
 				/>
 			</nav>
 		</template>
-
-		<PoweredByLink
-			class="mbs-auto"
-			utm-medium="navigation"
-		/>
 
 		<div
 			v-if="!isMobile"
@@ -152,37 +85,29 @@
 </template>
 
 <script setup lang="ts">
-import {computed} from 'vue'
+import { computed } from "vue";
 
-import {SHORTCUTS} from '@/constants/shortcuts'
-import PoweredByLink from '@/components/home/PoweredByLink.vue'
-import Logo from '@/components/home/Logo.vue'
-import Loading from '@/components/misc/Loading.vue'
+import { SHORTCUTS } from "@/constants/shortcuts";
+import Logo from "@/components/home/Logo.vue";
+import Loading from "@/components/misc/Loading.vue";
 
-import {useBaseStore} from '@/stores/base'
-import {useProjects} from '@/composables/useProjects'
-import {useConfigStore} from '@/stores/config'
-import {PRO_FEATURE} from '@/constants/proFeatures'
-import ProjectsNavigation from '@/components/home/ProjectsNavigation.vue'
-import {useSidebarResize} from '@/composables/useSidebarResize'
+import { useBaseStore } from "@/stores/base";
+import { useProjects } from "@/composables/useProjects";
+import ProjectsNavigation from "@/components/home/ProjectsNavigation.vue";
+import { useSidebarResize } from "@/composables/useSidebarResize";
 
-const baseStore = useBaseStore()
-const projectList = useProjects()
-const configStore = useConfigStore()
+const baseStore = useBaseStore();
+const projectList = useProjects();
 
-const timeTrackingEnabled = computed(() => configStore.isProFeatureEnabled(PRO_FEATURE.TIME_TRACKING))
+const { sidebarWidthStyle, isResizing, startResize, isMobile } =
+	useSidebarResize();
 
-const {sidebarWidthStyle, isResizing, startResize, isMobile} = useSidebarResize()
-
-const projects = computed(() => projectList.notArchivedRootProjects)
-const favoriteProjects = computed(() => projectList.favoriteProjects)
-const savedFilterProjects = computed(() => projectList.savedFilterProjects)
+const projects = computed(() => projectList.notArchivedRootProjects);
 </script>
 
 <style lang="scss" scoped>
 .logo {
 	display: block;
-
 	padding-inline-start: 1rem;
 	margin-inline-end: 1rem;
 	margin-block-end: 1rem;
@@ -258,7 +183,7 @@ const savedFilterProjects = computed(() => projectList.savedFilterProjects)
 		display: inline-block;
 
 		.icon {
-			padding-block-end: .25rem;
+			padding-block-end: 0.25rem;
 		}
 	}
 }

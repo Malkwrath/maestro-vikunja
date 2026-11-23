@@ -45,9 +45,19 @@
   --white-invert-l: 4%;
   --white-invert: #0a0a0a;
   --white-light-l: 100%;
-  --white-light: hsla(var(--white-h), var(--white-s), var(--white-light-l), var(--white-a));
+  --white-light: hsla(
+    var(--white-h),
+    var(--white-s),
+    var(--white-light-l),
+    var(--white-a)
+  );
   --white-dark-l: 29%;
-  --white-dark: hsla(var(--white-h), var(--white-s), var(--white-dark-l), var(--white-a));
+  --white-dark: hsla(
+    var(--white-h),
+    var(--white-s),
+    var(--white-dark-l),
+    var(--white-a)
+  );
   //--black-h: 0deg;
   //--black-s: 0%;
   //--black-l: 4%;
@@ -56,9 +66,19 @@
   --black-invert-l: 100%;
   --black-invert: white;
   --black-light-l: 96%;
-  --black-light: hsla(var(--black-h), var(--black-s), var(--black-light-l), var(--black-a));
+  --black-light: hsla(
+    var(--black-h),
+    var(--black-s),
+    var(--black-light-l),
+    var(--black-a)
+  );
   --black-dark-l: 57%;
-  --black-dark: hsla(var(--black-h), var(--black-s), var(--black-dark-l), var(--black-a));
+  --black-dark: hsla(
+    var(--black-h),
+    var(--black-s),
+    var(--black-dark-l),
+    var(--black-a)
+  );
   --light-h: 0deg;
   --light-s: 0%;
   --light-l: 96%;
@@ -67,9 +87,19 @@
   --light-invert-l: 0%;
   --light-invert: rgba(0, 0, 0, 0.7);
   --light-light-l: 96%;
-  --light-light: hsla(var(--light-h), var(--light-s), var(--light-light-l), var(--light-a));
+  --light-light: hsla(
+    var(--light-h),
+    var(--light-s),
+    var(--light-light-l),
+    var(--light-a)
+  );
   --light-dark-l: 29%;
-  --light-dark: hsla(var(--light-h), var(--light-s), var(--light-dark-l), var(--light-a));
+  --light-dark: hsla(
+    var(--light-h),
+    var(--light-s),
+    var(--light-dark-l),
+    var(--light-a)
+  );
   --dark-h: 0deg;
   --dark-s: 0%;
   --dark-l: 21%;
@@ -78,9 +108,19 @@
   --dark-invert-l: 100%;
   --dark-invert: #fff;
   --dark-light-l: 96%;
-  --dark-light: hsla(var(--dark-h), var(--dark-s), var(--dark-light-l), var(--dark-a));
+  --dark-light: hsla(
+    var(--dark-h),
+    var(--dark-s),
+    var(--dark-light-l),
+    var(--dark-a)
+  );
   --dark-dark-l: 54%;
-  --dark-dark: hsla(var(--dark-h), var(--dark-s), var(--dark-dark-l), var(--dark-a));
+  --dark-dark: hsla(
+    var(--dark-h),
+    var(--dark-s),
+    var(--dark-dark-l),
+    var(--dark-a)
+  );
   //--primary-h: 171deg;
   //--primary-s: 100%;
   //--primary-l: 41%;
@@ -89,9 +129,19 @@
   --primary-invert-l: 100%;
   --primary-invert: #fff;
   --primary-light-l: 96%;
-  --primary-light: hsla(var(--primary-h), var(--primary-s), var(--primary-light-l), var(--primary-a));
+  --primary-light: hsla(
+    var(--primary-h),
+    var(--primary-s),
+    var(--primary-light-l),
+    var(--primary-a)
+  );
   --primary-dark-l: 29%;
-  --primary-dark: hsla(var(--primary-h), var(--primary-s), var(--primary-dark-l), var(--primary-a));
+  --primary-dark: hsla(
+    var(--primary-h),
+    var(--primary-s),
+    var(--primary-dark-l),
+    var(--primary-a)
+  );
   --link-h: 229deg;
   --link-s: 53%;
   --link-l: 53%;
@@ -100,9 +150,19 @@
   --link-invert-l: 100%;
   --link-invert: #fff;
   --link-light-l: 96%;
-  --link-light: hsla(var(--link-h), var(--link-s), var(--link-light-l), var(--link-a));
+  --link-light: hsla(
+    var(--link-h),
+    var(--link-s),
+    var(--link-light-l),
+    var(--link-a)
+  );
   --link-dark-l: 47%;
-  --link-dark: hsla(var(--link-h), var(--link-s), var(--link-dark-l), var(--link-a));
+  --link-dark: hsla(
+    var(--link-h),
+    var(--link-s),
+    var(--link-dark-l),
+    var(--link-a)
+  );
   --info-h: 207deg;
   --info-s: 61%;
   --info-l: 53%;
@@ -111,9 +171,19 @@
   --info-invert-l: 100%;
   --info-invert: #fff;
   --info-light-l: 96%;
-  --info-light: hsla(var(--info-h), var(--info-s), var(--info-light-l), var(--info-a));
+  --info-light: hsla(
+    var(--info-h),
+    var(--info-s),
+    var(--info-light-l),
+    var(--info-a)
+  );
   --info-dark-l: 41%;
-  --info-dark: hsla(var(--info-h), var(--info-s), var(--info-dark-l), var(--info-a));
+  --info-dark: hsla(
+    var(--info-h),
+    var(--info-s),
+    var(--info-dark-l),
+    var(--info-a)
+  );
   //--success-h: 153deg;
   //--success-s: 53%;
   //--success-l: 53%;
@@ -122,9 +192,19 @@
   --success-invert-l: 100%;
   --success-invert: #fff;
   --success-light-l: 96%;
-  --success-light: hsla(var(--success-h), var(--success-s), var(--success-light-l), var(--success-a));
+  --success-light: hsla(
+    var(--success-h),
+    var(--success-s),
+    var(--success-light-l),
+    var(--success-a)
+  );
   --success-dark-l: 31%;
-  --success-dark: hsla(var(--success-h), var(--success-s), var(--success-dark-l), var(--success-a));
+  --success-dark: hsla(
+    var(--success-h),
+    var(--success-s),
+    var(--success-dark-l),
+    var(--success-a)
+  );
   //--warning-h: 44deg;
   //--warning-s: 100%;
   //--warning-l: 77%;
@@ -133,9 +213,19 @@
   --warning-invert-l: 0%;
   --warning-invert: rgba(0, 0, 0, 0.7);
   --warning-light-l: 96%;
-  --warning-light: hsla(var(--warning-h), var(--warning-s), var(--warning-light-l), var(--warning-a));
+  --warning-light: hsla(
+    var(--warning-h),
+    var(--warning-s),
+    var(--warning-light-l),
+    var(--warning-a)
+  );
   --warning-dark-l: 29%;
-  --warning-dark: hsla(var(--warning-h), var(--warning-s), var(--warning-dark-l), var(--warning-a));
+  --warning-dark: hsla(
+    var(--warning-h),
+    var(--warning-s),
+    var(--warning-dark-l),
+    var(--warning-a)
+  );
   //--danger-h: 348deg;
   //--danger-s: 86%;
   //--danger-l: 61%;
@@ -144,19 +234,33 @@
   --danger-invert-l: 100%;
   --danger-invert: #fff;
   --danger-light-l: 96%;
-  --danger-light: hsla(var(--danger-h), var(--danger-s), var(--danger-light-l), var(--danger-a));
+  --danger-light: hsla(
+    var(--danger-h),
+    var(--danger-s),
+    var(--danger-light-l),
+    var(--danger-a)
+  );
   --danger-dark-l: 43%;
-  --danger-dark: hsla(var(--danger-h), var(--danger-s), var(--danger-dark-l), var(--danger-a));
+  --danger-dark: hsla(
+    var(--danger-h),
+    var(--danger-s),
+    var(--danger-dark-l),
+    var(--danger-a)
+  );
   --input-color: var(--text-strong, #363636);
   --input-background-color: var(--scheme-main, white);
   //--input-border-color: var(--border, #dbdbdb);
-  --input-shadow: inset 0 0.0625em 0.125em rgba(var(--scheme-invert-rgb, 10.2, 10.2, 10.2), 0.05);
+  --input-shadow: inset 0 0.0625em 0.125em
+    rgba(var(--scheme-invert-rgb, 10.2, 10.2, 10.2), 0.05);
   --input-placeholder-color: #6e6e6e;
   --input-hover-color: var(--text-strong, #363636);
   --input-hover-border-color: var(--border-hover, #b5b5b5);
   --input-focus-color: var(--text-strong, #363636);
   --input-focus-border-color: var(--link, #485fc7);
-  --input-focus-box-shadow-color: var(--input-focus-box-shadow-color-hsla, rgba(72, 95, 199, 0.25));
+  --input-focus-box-shadow-color: var(
+    --input-focus-box-shadow-color-hsla,
+    rgba(72, 95, 199, 0.25)
+  );
   --input-disabled-color: var(--text-light, #7a7a7a);
   //--input-disabled-background-color: var(--background, whitesmoke);
   //--input-disabled-border-color: var(--background, whitesmoke);
@@ -174,7 +278,6 @@
   --white-ter: whitesmoke;
   --white-bis: #fafafa;
   // END core Bulma color variables
-
 
   // Vikunja specific variables
   --grey-50: hsl(210, 20%, 98%);
@@ -209,7 +312,12 @@
   --white-l: 100%;
   --white-a: 1;
   --white: hsla(var(--white-h), var(--white-s), var(--white-l), var(--white-a));
-  --white-translucent: hsla(var(--white-h), var(--white-s), var(--white-l), 0.75);
+  --white-translucent: hsla(
+    var(--white-h),
+    var(--white-s),
+    var(--white-l),
+    0.75
+  );
 
   --black-h: 0deg;
   --black-s: 0%;
@@ -222,29 +330,54 @@
   --warning-s: 100%;
   --warning-l: 55.3%;
   --warning-a: 1;
-  --warning: hsla(var(--warning-h), var(--warning-s), var(--warning-l), var(--warning-a));
+  --warning: hsla(
+    var(--warning-h),
+    var(--warning-s),
+    var(--warning-l),
+    var(--warning-a)
+  );
 
   // $success / $green is #00db60
   --success-h: 146.3deg;
   --success-s: 100%;
   --success-l: 42.9%;
   --success-a: 1;
-  --success: hsla(var(--success-h), var(--success-s), var(--success-l), var(--success-a));
+  --success: hsla(
+    var(--success-h),
+    var(--success-s),
+    var(--success-l),
+    var(--success-a)
+  );
 
   // Darker than --success: --success as text fails WCAG contrast on white
   --success-text-l: 25%;
-  --success-text: hsla(var(--success-h), var(--success-s), var(--success-text-l), var(--success-a));
+  --success-text: hsla(
+    var(--success-h),
+    var(--success-s),
+    var(--success-text-l),
+    var(--success-a)
+  );
 
   // $danger / $red is #ff4136
   --danger-h: 3.3deg;
   --danger-s: 100%;
   --danger-l: 60.6%;
   --danger-a: 1;
-  --danger: hsla(var(--danger-h), var(--danger-s), var(--danger-l), var(--danger-a));
+  --danger: hsla(
+    var(--danger-h),
+    var(--danger-s),
+    var(--danger-l),
+    var(--danger-a)
+  );
 
   // Darker than --danger: --danger as text fails WCAG contrast (3.46:1 on white)
   --danger-text-l: 40%;
-  --danger-text: hsla(var(--danger-h), var(--danger-s), var(--danger-text-l), var(--danger-a));
+  --danger-text: hsla(
+    var(--danger-h),
+    var(--danger-s),
+    var(--danger-text-l),
+    var(--danger-a)
+  );
 
   // var(--primary) / $blue is #1973ff
   --primary-h: 217deg;
@@ -252,19 +385,33 @@
   --primary-l: 53%;
   --primary-a: 1;
   --primary-hsl: var(--primary-h), var(--primary-s), var(--primary-l);
-  --primary: hsla(var(--primary-h), var(--primary-s), var(--primary-l), var(--primary-a));
+  --primary: hsla(
+    var(--primary-h),
+    var(--primary-s),
+    var(--primary-l),
+    var(--primary-a)
+  );
 
   --link: var(--primary);
-  --link-hover: hsla(var(--primary-h), var(--primary-s), var(--primary-l), .75);
+  --link-hover: hsla(
+    var(--primary-h),
+    var(--primary-s),
+    var(--primary-l),
+    0.75
+  );
   --border: var(--grey-200);
   --input-disabled-background-color: var(--grey-100);
   --input-disabled-border-color: var(--grey-300);
   --progress-value-background-color: var(--grey-500);
   // END Overrides of Bulma defaults
 
-
   // Define custom color variable to prevent change in dark mode
-  --switch-view-color: hsla(var(--white-h), var(--white-s), var(--white-l), var(--white-a));
+  --switch-view-color: hsla(
+    var(--white-h),
+    var(--white-s),
+    var(--white-l),
+    var(--white-a)
+  );
   --switch-view-active-background: var(--primary);
 
   // Define custom color variable to allow change in dark mode
@@ -280,72 +427,75 @@
 
   &.dark {
     @media screen {
-      // Light mode colours reversed for dark mode
-      --grey-900-hsl: 210, 20%, 98%;
+      // Skala Obsydianu (neutralny, głęboki antracyt zamiast niebieskawego szarego)
+      --grey-900-hsl: 220, 20%, 96%;
       --grey-900: hsl(var(--grey-900-hsl));
-      --grey-800: hsl(220, 14.3%, 95.9%);
-      --grey-700: hsl(220, 13%, 91%);
-      --grey-600: hsl(216, 12.2%, 83.9%);
-      --grey-500-hsl: 217.9, 10.6%, 64.9%;
+      --grey-800: hsl(220, 16%, 91%);
+      --grey-700: hsl(220, 14%, 84%);
+      --grey-600: hsl(220, 12%, 74%);
+      --grey-500-hsl: 220, 10%, 58%;
       --grey-500: hsl(var(--grey-500-hsl));
-      --grey-400: hsl(220, 8.9%, 46.1%);
-      --grey-300: hsl(215, 13.8%, 34.1%);
-      --grey-200: hsl(216.9, 19.1%, 26.7%);
-      --grey-100-hsl: 215, 27.9%, 16.9%;
+      --grey-400: hsl(220, 9%, 44%);
+      --grey-300: hsl(222, 10%, 26%);
+      --grey-200: hsl(222, 13%, 17%);
+      --grey-100-hsl: 222, 14%, 11%;
       --grey-100: hsl(var(--grey-100-hsl));
-      --grey-50-hsl: 220.9, 39.3%, 11%;
+      --grey-50-hsl: 222, 16%, 7%;
       --grey-50: hsl(var(--grey-50-hsl));
 
-      // Dark grey looks better than black
+      --site-background: hsl(222, 18%, 5%);
       --white: var(--grey-50);
       --black-l: 100%;
 
-      // Text renders better in grey than black
+      // Typografia
       --text: var(--grey-800);
-      --text-invert: #000;
-      --text-light: var(--grey-300);
+      --text-invert: #0b0c0f;
+      --text-light: var(--grey-400);
       --text-strong: var(--grey-900);
+      --text-muted: var(--grey-500);
 
-      // Elements that rely on Bulma defaults in light mode but
-      // need to be overridden in dark mode
-      --input-placeholder-color: hsla(var(--grey-900-hsl), 0.6);
-      --tag-color: var(--grey-300);
+      // Elementy formularzy i komponentów
+      --input-placeholder-color: hsla(var(--grey-900-hsl), 0.5);
+      --tag-color: var(--grey-700);
       --table-row-hover-background-color: var(--grey-100);
-      --dropdown-item-hover-background-color: var(--grey-100);
+      --dropdown-item-hover-background-color: var(--grey-200);
       --dropdown-item-hover-color: var(--text);
-      --pre-background: var(--grey-200);
-      --code-background: var(--grey-200);
+      --pre-background: var(--grey-100);
+      --code-background: var(--grey-100);
       --code: var(--code-variable);
       --button-text-hover-background-color: var(--grey-200);
-      --button-hover-color: var(--grey-600);
-      --button-active-color: var(--grey-600);
-      --button-focus-color: var(--grey-600);
+      --button-hover-color: var(--grey-800);
+      --button-active-color: var(--grey-900);
+      --button-focus-color: var(--grey-800);
 
-      // Custom color variables we need to override
-      --card-border-color: hsla(var(--grey-100-hsl), 0.3);
-      --logo-text-color: var(--grey-700);
+      --card-border-color: var(--grey-200);
+      --logo-text-color: var(--grey-800);
 
-      // Slightly different primary color to make sure it has a sufficient contrast ratio
-      --primary-h: 217deg;
-      --primary-s: 98%;
-      --primary-l: 58%;
+      // Akcent Maestro: Goldenrod (#DAA520)
+      --primary-h: 43deg;
+      --primary-s: 74%;
+      --primary-l: 49%;
+      --primary-hsl: var(--primary-h), var(--primary-s), var(--primary-l);
+      --primary: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 1);
+      --primary-invert: #0b0c0f;
+      --link: var(--primary);
+      --link-hover: hsla(var(--primary-h), var(--primary-s), 57%, 1);
+      --switch-view-active-background: hsl(
+        var(--primary-h),
+        var(--primary-s),
+        41%
+      );
 
-      // Muted text is a light grey on dark backgrounds and already passes; keep it
-      --text-muted: var(--grey-500);
-      // The lighter dark-mode primary fails white-text contrast on the active view tab, so darken it there
-      --switch-view-active-background: hsl(var(--primary-h), var(--primary-s), 50%);
-
-      // Bright values already pass contrast on dark backgrounds; skip the light-theme darkening
       --danger-text: var(--danger);
       --success-text: var(--success);
 
       --scheme-main-bis: var(--grey-100);
-      --scheme-main-ter: var(--grey-100);
+      --scheme-main-ter: var(--grey-200);
       --scheme-invert: var(--grey-900);
       --scheme-invert-bis: var(--grey-900);
       --scheme-invert-ter: var(--grey-800);
 
-      // Code colors
+      // Kolory składni kodu
       --code-variable: #f98181;
       --code-literal: #fbbc88;
       --code-symbol: #b9f18d;

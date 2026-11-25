@@ -106,7 +106,7 @@ func getFavorites(s *xorm.Session, entityIDs []int64, a web.Auth, kind FavoriteK
 		favorites[fav.EntityID] = true
 	}
 	return
-	
+}	
 func validatePedestalWIPLimit(s *xorm.Session, a web.Auth, excludeTaskID int64) error {
 	u, err := user.GetFromAuth(a)
 	if err != nil {

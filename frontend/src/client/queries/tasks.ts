@@ -165,6 +165,10 @@ async function fetchTaskList(
 	signal?: AbortSignal,
 ) {
 	const query = {...params, page}
+	if ((!view || project === null) && Array.isArray(query.sort_by) && query.sort_by.includes('position')) {
+		query.sort_by = ['priority', 'id']
+		query.order_by = ['desc', 'desc']
+	}
 	if (project === null) return (await tasksList({query, signal})).data
 	if (view) return (await projectViewTasksList({path: {project, view}, query, signal})).data
 	return (await projectTasksList({path: {project}, query, signal})).data

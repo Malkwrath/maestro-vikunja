@@ -1,4 +1,7 @@
-{
+﻿{
+    "go.toolsEnvVars": {
+        "CGO_ENABLED": "1"
+    },
     "go.testEnvVars": {
         "VIKUNJA_SERVICE_ROOTPATH": "${workspaceRoot}"
     },

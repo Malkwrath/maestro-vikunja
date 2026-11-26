@@ -1,60 +1,34 @@
-<script setup lang="ts">
-import { computed } from 'vue'
-import { useNow } from '@vueuse/core'
-import { useAuthStore } from '@/stores/auth'
-import { useConfigStore } from '@/stores/config'
-import { useColorScheme } from '@/composables/useColorScheme'
-
-import LogoFull from '@/assets/logo-full.svg?component'
-import LogoFullPride from '@/assets/logo-full-pride.svg?component'
-import {MILLISECONDS_A_HOUR} from '@/constants/date'
-
-const now = useNow({
-	interval: MILLISECONDS_A_HOUR,
-})
-
-const authStore = useAuthStore()
-const configStore = useConfigStore()
-const { isDark } = useColorScheme()
-
-const Logo = computed(() => configStore.allow_icon_changes
-	&& authStore.settings.frontend_settings.allow_icon_changes
-	&& now.value.getMonth() === 5
-	? LogoFullPride
-	: LogoFull)
-
-const CustomLogo = computed(() => {
-	const lightLogo = window.CUSTOM_LOGO_URL
-	const darkLogo = window.CUSTOM_LOGO_URL_DARK
-
-	if (!lightLogo && !darkLogo) return ''
-	if (!darkLogo) return lightLogo
-	if (!lightLogo) return darkLogo
-
-	return isDark.value ? darkLogo : lightLogo
-})
+﻿<script setup lang="ts">
+import MaestroLogo from '@/assets/maestro-logo.svg?component'
 </script>
 
 <template>
-	<div>
-		<Logo
-			v-if="!CustomLogo"
-			alt="Vikunja"
-			class="logo"
-		/>
-		<img
-			v-else
-			:src="CustomLogo"
-			alt="Vikunja"
-			class="logo"
-		>
-	</div>
+<div class="maestro-brand" title="Maestro">
+<MaestroLogo class="maestro-icon" aria-label="Maestro" />
+<span class="maestro-wordmark">MAESTRO</span>
+</div>
 </template>
 
 <style lang="scss" scoped>
-.logo {
-	color: var(--logo-text-color);
-	max-inline-size: 168px;
-	max-block-size: 48px;
+.maestro-brand {
+display: inline-flex;
+align-items: center;
+gap: 0.65rem;
+text-decoration: none;
+user-select: none;
+}
+
+.maestro-icon {
+inline-size: 36px;
+block-size: 36px;
+flex-shrink: 0;
+}
+
+.maestro-wordmark {
+font-weight: 800;
+font-size: 1.25rem;
+letter-spacing: 0.14em;
+color: #f8f8f8;
+text-transform: uppercase;
 }
 </style>
